@@ -1,15 +1,16 @@
 const Navbar = () => {
   return (
-    <div>
-        <nav className="">
-            <div>
-                <a href="/" className="text-2xl font-bold italic">To Do</a>
-            </div>
-            <div>
-
-            </div>
-        </nav>
+    <div className="flex h-screen">
+      <nav className="bg-gray-800 text-white w-64 p-4 flex flex-col">
+        <h1 className="text-lg font-bold mb-6">To Do</h1>
+        <a href="#" className="mb-4 hover:bg-gray-700 p-2 rounded">
+          Home
+        </a>
+        <a href="#" className="mb-4 hover:bg-gray-700 p-2 rounded">
+          Stats
+        </a>
+      </nav>
     </div>
-  )
-}
-export default Navbar
+  );
+};
+export default Navbar;

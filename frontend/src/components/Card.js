@@ -1,8 +1,4 @@
-const Card = () => {
-  return (
-    <div>
-        
-    </div>
-  )
-}
-export default Card
+const Card = (props) => {
+  return <div></div>;
+};
+export default Card;
