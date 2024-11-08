@@ -1,8 +1,26 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
 import Navbar from "./Navbar";
 import Header from "./Header";
+import Card from "./Card";
 import Create from "./Create";
 
 const Home = () => {
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const fetchTasks = async () => {
+      try {
+        const res = await axios.get("http://localhost:5000/tasks");
+        setTasks(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchTasks();
+  }, []);
+
   return (
     <div>
       <div className="flex h-screen">
@@ -17,6 +35,13 @@ const Home = () => {
             <p className="text-textSecondary mt-4">
               Here’s your overview for today:
             </p>
+            {tasks.map((task) => (
+              <Card
+                key={task.id}
+                title={task.title}
+                difficulty={task.difficulty}
+              />
+            ))}
             <Create />
           </main>
         </div>
