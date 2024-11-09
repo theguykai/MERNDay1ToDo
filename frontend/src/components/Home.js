@@ -37,7 +37,7 @@ const Home = () => {
             </p>
             {tasks.map((task) => (
               <Card
-                key={task.id}
+                key={task._id}
                 title={task.title}
                 difficulty={task.difficulty}
               />

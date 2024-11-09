@@ -42,6 +42,21 @@ app.get("/tasks", async (req, res, next) => {
   }
 });
 
+app.post("/tasks", async (req, res, next) => {
+  try {
+    const task = new Item({
+      title: req.body.title,
+      difficulty: req.body.difficulty,
+    });
+    await task.save();
+    res.json(task);
+  } catch {
+    (err) => {
+      next(console.log(err));
+    };
+  }
+});
+
 app.listen(process.env.PORT || 5000, () => {
   console.log("Server is running");
 });
