@@ -57,6 +57,18 @@ app.post("/tasks", async (req, res, next) => {
   }
 });
 
+app.delete("/tasks/:id", async (req, res, next) => {
+  try {
+    await Item.findByIdAndDelete(req.params.id);
+    res.send("Task deleted");
+    res.status(200).json({ message: "Task deleted" });
+  } catch {
+    (err) => {
+      next(console.log(err));
+    };
+  }
+});
+
 app.listen(process.env.PORT || 5000, () => {
   console.log("Server is running");
 });
