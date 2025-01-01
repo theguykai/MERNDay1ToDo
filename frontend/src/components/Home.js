@@ -45,14 +45,7 @@ const Home = () => {
         <div className="flex flex-col flex-grow">
           <Header />
           <main className="flex flex-col justify-center gap-5 flex-grow p-6 bg-background">
-            <span className="text-3xl font-bold text-primary">
-              Welcome{" "}
-              <span className="text-3xl font-bold text-textPrimary">
-                to the{" "}
-                <span className="text-3xl font-bold text-priority">To-Do</span>{" "}
-                App
-              </span>
-            </span>
+            
 
             {/* <p className="text-textSecondary mt-4">
               Here’s your overview for today:

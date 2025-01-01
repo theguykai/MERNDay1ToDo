@@ -45,10 +45,16 @@ const Card = ({ task, deleteTask }) => {
           Difficulty: {task.difficulty}
         </p>
       </div>
-      <div>
+      <div className="flex gap-2">
+        <button
+          onClick={() => console.log("Edit task")}
+          className="w-16 p-2 bg-yellow-500 text-white rounded-lg shadow-md hover:shadow-lg hover:bg-yellow-600 transition duration-200"
+        >
+          Edit
+        </button>
         <button
           onClick={handleDelete}
-          className="p-2 bg-red-500 text-white rounded-lg shadow-md hover:shadow-lg hover:bg-red-600 transition duration-200"
+          className="w-16 p-2 bg-red-500 text-white rounded-lg shadow-md hover:shadow-lg hover:bg-red-600 transition duration-200"
         >
           Delete
         </button>
